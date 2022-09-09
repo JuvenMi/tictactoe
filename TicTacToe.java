@@ -39,13 +39,16 @@ public class TicTacToe extends JFrame{
     int b9 = 100;
 
     public TicTacToe(){
+        //Settings this application
         add(panel1);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Tic Tac Toe Game");
         setSize(400,400);
         setDefaultLookAndFeelDecorated(true);
 
-
+        /**
+         * btn1 to btn9 place X or O
+         */
         btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -182,6 +185,9 @@ public class TicTacToe extends JFrame{
                 winningGame();
             }
         });
+        /**
+         * For reset game
+         */
         btnReset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -221,6 +227,9 @@ public class TicTacToe extends JFrame{
         });
     }
 
+    /**
+     * For whose turn it is
+     */
     private void choosePlayer(){
         if (startGame.equalsIgnoreCase("x")){
             startGame = "O";
@@ -229,6 +238,9 @@ public class TicTacToe extends JFrame{
         }
     }
 
+    /**
+     * For choose who winned game
+     */
     private void winningGame(){
         if((b1 == 1 && b2 == 1 && b3 == 1)){
             xScore++;
@@ -328,6 +340,10 @@ public class TicTacToe extends JFrame{
             reset();
         }
     }
+
+    /**
+     * For reset after game over
+     */
     public void reset(){
         btn1.setText(null);
         btn1.setBackground(null);
